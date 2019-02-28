@@ -22,5 +22,13 @@
             "smile": false
         },
         "multiple": false
+    },
+    "decoration": {
+        "parts": {
+            "shy": false,
+            "sweat1": false,
+            "sweat2": false
+        },
+        "multiple": true
     }
 }

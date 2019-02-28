@@ -1,33 +1,12 @@
 const vm = new Vue({
     el: '#app',
     data: {
-        json: {
-            eye: {
-                parts: {
-                    primary: true,
-                    close: false,
-                    semiClose: false
-                }
-            },
-            eyebrow: {
-                parts: {
-                    primary: true,
-                    pokerFaced: false,
-                    sad: false
-                }
-            },
-            mouth: {
-                parts: {
-                    primary: true,
-                    open: false,
-                    smile: false
-                }
-            }
-        },
+        json: {},
         status: {
             eye: "primary",
             eyebrow: "primary",
             mouth: "primary",
+            decoration: []
         }
     },
     computed: {
@@ -39,7 +18,10 @@ const vm = new Vue({
         },
         mouth: function () {
             return this.json.mouth.parts;
-        }
+        },
+        decoration: function () {
+            return this.json.decoration.parts;
+        },
     },
     watch: {
         status: {
@@ -54,6 +36,8 @@ const vm = new Vue({
     created: function () {
         axios.get("./js/data.json").then(res => {
             this.json = res.data
+        }).catch(error => {
+            console.log(error);
         })
     },
     methods: {
@@ -62,11 +46,12 @@ const vm = new Vue({
             for (item in list) {
                 if (item === active) {
                     list[item] = true
+                } else if (active.includes(item)) {
+                    list[item] = true
                 } else {
                     list[item] = false
                 }
             }
-            //console.log(this.json[key])
-        }
+        },
     },
 })

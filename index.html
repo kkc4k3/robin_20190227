@@ -13,7 +13,7 @@
 
 <body>
     <div id="app">
-        <div class="svg-wrap">
+        <div class="svg-wrap" v-if="json">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 500 500">
                 <g id="robin_wrap">
@@ -138,8 +138,8 @@
                             <path id="eyebrow-primary" :class="{active:eyebrow.primary}" class="st16 operate" d="M276.3,194.6c-0.9,0-1.7-0.6-1.9-1.4c-0.3-1.1,0.3-2.2,1.4-2.5c2-0.6,48.7-14.1,66.4-1.8
                         				c0.9,0.6,1.1,1.9,0.5,2.8c-0.6,0.9-1.9,1.1-2.8,0.5c-16.2-11.2-62.6,2.2-63,2.4C276.7,194.6,276.5,194.6,276.3,194.6z" />
                         </g>
-                        <!-- <g id="accent" class="st4">
-                            <g id="accent-shy" :class="{active:accent.shy}" class="operate">
+                        <g id="accent" class="st4">
+                            <g id="accent-shy" :class="{active:decoration.shy}" class="operate">
                                 <path class="st17" d="M283.1,294.8c-0.4,0-0.7-0.1-1-0.4c-0.6-0.6-0.7-1.5-0.1-2.1l13.4-15c0.6-0.6,1.5-0.7,2.1-0.1
                         					c0.6,0.6,0.7,1.5,0.1,2.1l-13.4,15C283.9,294.6,283.5,294.8,283.1,294.8z" />
                                 <path class="st17" d="M291.3,295.7c-0.3,0-0.7-0.1-1-0.3c-0.6-0.5-0.7-1.5-0.2-2.1l13.9-17c0.5-0.6,1.5-0.7,2.1-0.2
@@ -153,15 +153,15 @@
                                 <path class="st17" d="M326.4,295.7c-0.2,0-0.4,0-0.6-0.1c-0.8-0.3-1.1-1.2-0.8-2l5.6-13.2c0.3-0.8,1.2-1.1,2-0.8
                         					c0.8,0.3,1.1,1.2,0.8,2l-5.6,13.2C327.6,295.4,327,295.7,326.4,295.7z" />
                             </g>
-                            <path id="accent-sweat1" :class="{active:accent.sweat1}" class="st18 operate" d="M362.9,91.1c6.3,6,13.9,29.9,13.9,45.3c0,11.9-10.2,14.8-13.8,14.8s-13.4-2.3-14-15.1
+                            <path id="accent-sweat1" :class="{active:decoration.sweat1}" class="st18 operate" d="M362.9,91.1c6.3,6,13.9,29.9,13.9,45.3c0,11.9-10.2,14.8-13.8,14.8s-13.4-2.3-14-15.1
                         				C348.4,122.3,356.1,97.1,362.9,91.1z" />
-                            <g id="accent-sweat2" :class="{active:accent.sweat2}" class="operate">
+                            <g id="accent-sweat2" :class="{active:decoration.sweat2}" class="operate">
                                 <path id="swet_1_" class="st18" d="M387.6,143.2c1-5.2,10.6-16.8,18.3-21.9c6-3.9,10.8,0.3,12,2.1c1.2,1.8,3.2,7.5-3.1,12
                         					C408.1,140.3,392.9,144.7,387.6,143.2z" />
                                 <path id="swet_2_" class="st18" d="M391.6,155.1c4.2-3.2,19.1-5.5,28.2-4.1c7.1,1.1,7.8,7.4,7.5,9.6c-0.3,2.1-2.6,7.7-10.3,6.9
                         					C408.8,166.6,394.6,159.8,391.6,155.1z" />
                             </g>
-                        </g> -->
+                        </g>
                     </g>
                 </g>
             </svg>
@@ -170,8 +170,10 @@
             <h4 class="head">{{name}}</h4>
             <label v-for="(state,key) in item.parts" class="inputwrap">
                 <input :type="item.multiple?'checkbox':'radio'" class="radiobox" :name="name" v-model="status[name]"
-                    :value="key"><span class="fas fa-leaf check_icon" :class="{active:json[name]['parts'][key]}"></span><span
-                    class="label">{{key}}</span>
+                    :value="key">
+                <span v-if="!item.multiple" class="fas fa-leaf radio_icon" :class="{active:json[name]['parts'][key]}"></span>
+                <span v-if="item.multiple" class="fas fa-crow check_icon" :class="{active:json[name]['parts'][key]}"></span>
+                <span class="label">{{key}}</span>
             </label>
         </div>
     </div>

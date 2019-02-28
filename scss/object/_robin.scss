@@ -23,13 +23,22 @@
     }
 }
 
+.radio_icon,
 .check_icon {
     font-size: 20px;
     margin-right: 5px;
     color: #B0BEC5;
+}
 
+.radio_icon {
     &.active {
         color: #4CAF50;
+    }
+}
+
+.check_icon {
+    &.active {
+        color: #2196F3;
     }
 }
 
