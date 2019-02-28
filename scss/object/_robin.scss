@@ -9,3 +9,12 @@
 .controller {
     padding: 16px;
 }
+
+.svg-wrap {
+    width: 100%;
+
+    @media #{$tab} {
+        width: 480px;
+        margin: 0 auto;
+    }
+}

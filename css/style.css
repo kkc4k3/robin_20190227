@@ -314,6 +314,17 @@ ul {
   padding: 16px;
 }
 
+.svg-wrap {
+  width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .svg-wrap {
+    width: 480px;
+    margin: 0 auto;
+  }
+}
+
 .st0 {
   display: none;
 }
