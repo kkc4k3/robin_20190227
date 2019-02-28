@@ -1,17 +1,26 @@
 {
     "eye": {
-        "primary": true,
-        "close": false,
-        "semiClose": false
+        "parts": {
+            "primary": true,
+            "close": false,
+            "semiClose": false
+        },
+        "multiple": false
     },
     "eyebrow": {
-        "primary": true,
-        "pokerFaced": false,
-        "sad": false
+        "parts": {
+            "primary": true,
+            "pokerFaced": false,
+            "sad": false
+        },
+        "multiple": false
     },
     "mouth": {
-        "primary": true,
-        "open": false,
-        "smile": false
+        "parts": {
+            "primary": true,
+            "open": false,
+            "smile": false
+        },
+        "multiple": false
     }
 }

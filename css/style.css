@@ -314,6 +314,10 @@ ul {
   padding: 16px;
 }
 
+.controller > .head {
+  margin-bottom: 5px;
+}
+
 .svg-wrap {
   width: 100%;
 }
