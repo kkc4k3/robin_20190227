@@ -1,0 +1,64 @@
+// ===================================
+// 変数
+// ===================================
+
+// スペース
+$space-ss:.5rem;
+$space-s:.8rem;
+$space-ms:1.2rem;
+$space-m:1.6rem;
+$space-l:2.4rem;
+$space-2l:3.2rem;
+$space-3l:6.4rem;
+
+// フォントサイズ
+$font-s:1.2rem;
+$font-m:1.6rem; // デフォルト
+$font-l:2.4rem;
+$font-2l:3.2rem;
+$font-3l:4.8rem;
+
+// 色
+$color-text:#212121;
+
+// フォント
+$font-main:-apple-system,
+BlinkMacSystemFont,
+"Helvetica Neue",
+"游ゴシック Medium",
+YuGothic,
+YuGothicM,
+"Hiragino Kaku Gothic ProN",
+メイリオ,
+Meiryo,
+sans-serif;
+
+$font-sub:'Montserrat Alternates',
+sans-serif;
+
+// ===================================
+// メディアクエリ
+// ===================================
+$wide:'screen and (min-width:1180px)';
+$pc:'screen and (min-width:980px)';
+$tab:'screen and (min-width:769px)';
+$phone:'screen and (max-width:768px)';
+
+// ===================================
+// デフォ設定
+// ===================================
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: $font-main;
+    color: $color-text;
+}
+
+ul {
+    list-style: none;
+}
