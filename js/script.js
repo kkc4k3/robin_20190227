@@ -7,7 +7,8 @@ const vm = new Vue({
             eyebrow: "primary",
             mouth: "primary",
             decoration: []
-        }
+        },
+        ready: false
     },
     computed: {
         eye: function () {
@@ -36,6 +37,7 @@ const vm = new Vue({
     beforeCreate: function () {
         axios.get("./js/data.json").then(res => {
             this.json = res.data
+            this.ready = true
         }).catch(error => {
             console.log(error);
         })
