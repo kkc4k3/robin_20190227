@@ -33,7 +33,7 @@ const vm = new Vue({
             deep: true
         }
     },
-    created: function () {
+    beforeCreate: function () {
         axios.get("./js/data.json").then(res => {
             this.json = res.data
         }).catch(error => {
