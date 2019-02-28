@@ -306,7 +306,7 @@ ul {
   display: none;
 }
 
-.active {
+.operate.active {
   display: block;
 }
 
@@ -323,6 +323,28 @@ ul {
     width: 480px;
     margin: 0 auto;
   }
+}
+
+.check_icon {
+  font-size: 20px;
+  margin-right: 5px;
+  color: #B0BEC5;
+}
+
+.check_icon.active {
+  color: #4CAF50;
+}
+
+.radiobox {
+  display: none;
+}
+
+.inputwrap {
+  margin-right: 12px;
+}
+
+.label {
+  user-select: none;
 }
 
 .st0 {

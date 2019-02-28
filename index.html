@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
@@ -166,8 +168,9 @@
         </div>
         <div class="controller" v-for="(item,name) in json">
             <h4>{{name}}</h4>
-            <label v-for="(state,key) in item">
-                <input type="radio" :name="name" v-model="status[name]" :value="key">{{key}}
+            <label v-for="(state,key) in item" class="inputwrap">
+                <input type="radio" class="radiobox" :name="name" v-model="status[name]" :value="key"><span class="fas fa-leaf check_icon"
+                    :class="{active:json[name][key]}"></span><span class="label">{{key}}</span>
             </label>
         </div>
     </div>
